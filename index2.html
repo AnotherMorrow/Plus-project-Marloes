@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/40fb5118ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-field">
+        <header>
+          <h1>Forecast by Marloes</h1>
+        </header>
+        <section class="sec-search">
+          <p class="find">Find your city</p>
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="Type city name"
+              autocomplete="off"
+              autofocus="on"
+              id="search-city-input"
+            />
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+
+          <hr />
+        </section>
+        <section class="sec-result">
+          <div class="today">Today is:</div>
+          <div class="date">Monday 1 January 2022, 16:00</div>
+          <h2>The weather in Arnhem</h2>
+          <div class="row">
+            <div class="col-3" class="big-icon">
+              <img src="media/icons-weather/sun.svg" alt="sun" />
+            </div>
+            <div class="col-4">
+              <span class="temp-day">13</span>
+              <span class="units">
+                <a href="#" id="celsius-link">ºC</a>
+              </span>
+            </div>
+            <div class="col-5">
+              <ul>
+                <li class="weather-details" id="detail-one">Weather</li>
+                <li class="weather-details" id="detail-two">Humidity:</li>
+                <li class="weather-details" id="detail-three">Wind:</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+        </section>
+        <footer>
+          <p class="coded-by">Coded by Marloes van der Wiel</p>
+          <small
+            >Find me on
+            <a href="https://www.linkedin.com/in/marloesvanderwiel/"
+              >LinkedIn
+            </a>
+            or
+            <a href="https://www.instagram.com/degroenepostzegel/"
+              >Instagram
+            </a>
+            <br />
+            Iconset:
+            <a
+              href="https://www.iconfinder.com/iconsets/the-weather-is-nice-today"
+              >The Weather is Nice Today
+            </a>
+          </small>
+        </footer>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
