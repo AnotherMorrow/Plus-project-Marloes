@@ -73,6 +73,10 @@ span.units a:hover {
   padding: 5px 0px;
 }
 
+.big-temp {
+  padding-left: 0;
+}
+
 .units {
   font-size: 15px;
 }
