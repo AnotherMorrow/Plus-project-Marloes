@@ -69,6 +69,15 @@ span.units a:hover {
   text-decoration: underline;
 }
 
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 .date {
   padding: 5px 0px;
 }
