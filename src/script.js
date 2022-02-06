@@ -40,28 +40,29 @@ function formatDate(date) {
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city-input");
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `The weather in ${searchInput.value}`;
   let apiKey = "bf635ee358fd7c6cf46cfa9caadaea03";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
-function showTemperature(response) {
+function displayTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let weatherDesc = response.data.weather[0].description;
+  let weatherDescription = response.data.weather[0].description;
   let humidityDegree = response.data.main.humidity;
-  let windSpeed = response.data.wind.speed;
+  let windSpeed = Math.round(response.data.wind.speed);
+  let cityName = response.data.name;
 
-  console.log(weatherDesc);
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `The weather in ${cityName}`;
 
   let heading = document.querySelector(".temp-day");
   heading.innerHTML = temperature;
 
   let detailOne = document.querySelector("#detail-one");
-  detailOne.innerHTML = weatherDesc[0].toUpperCase() + weatherDesc.substring(1);
+  detailOne.innerHTML =
+    weatherDescription[0].toUpperCase() + weatherDescription.substring(1);
 
   let detailTwo = document.querySelector("#detail-two");
   detailTwo.innerHTML = `Humidity: ${humidityDegree}%`;
