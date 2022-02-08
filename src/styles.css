@@ -95,13 +95,13 @@ span.units a:hover {
   max-width: 100%;
 }
 
-.sec-days img {
+.weather-forecast img {
   width: 30px;
   margin-bottom: 10px;
 }
 
-.sec-days ul {
-  width: 70%;
+.weather-forecast ul {
+  width: 100%;
 }
 
 .container {
@@ -135,4 +135,15 @@ span.units a:hover {
 
 .today {
   font-size: 14px;
+}
+
+.weather-forecast-temperature-min,
+.weather-forecast-temperature-max {
+  width: 40px;
+  display: inline-block;
+  text-align: right;
+}
+
+.weather-forecast-temperature-min {
+  color: grey;
 }
