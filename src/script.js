@@ -102,20 +102,17 @@ function displayCelsiusTemperature(event) {
 }
 
 function displayForecast() {
-  //let forecastElement = document.querySelector("#forecast");
-
-  //let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Mon", "Tue", "Wed", "Thu"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = ``;
 
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-              <div class="col-3 weather-forecast-date">${day}</div>
+      `<div class="row">
+      <div class="col-3 weather-forecast-date">${day}</div>
               <div class="col-3">
                 <img src="media/icons-weather/sun.svg" alt="sun" />
               </div>
@@ -123,11 +120,11 @@ function displayForecast() {
                 <span class="weather-forecast-temperature-max">8ºC</span
                 ><span class="weather-forecast-temperature-min">6ºC</span>
               </div>
+              </div>
             `;
   });
-  forecastHTML = forecastHTML + `</div>`;
+
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 let dateElement = document.querySelector(".date");
