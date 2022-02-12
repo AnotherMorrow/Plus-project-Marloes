@@ -19,6 +19,8 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  color: black;
 }
 button:hover {
   transform: scale(120%);
