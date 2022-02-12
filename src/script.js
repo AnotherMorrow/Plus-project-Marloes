@@ -141,4 +141,4 @@ dateElement.innerHTML = formatDate(currentTime);
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-searchCity("Amsterdam");
+searchCity("Bali");

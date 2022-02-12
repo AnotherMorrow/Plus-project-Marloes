@@ -135,4 +135,5 @@ span.units a {
 
 .weather-forecast-temperature-min {
   color: grey;
+  padding-left: 15px;
 }
