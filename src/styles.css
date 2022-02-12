@@ -1,18 +1,22 @@
 body {
-  background: #c1dfc4;
+  background: #c1dfc4
+    url("https://images.unsplash.com/photo-1581345331960-d1b0a223ef96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=60");
 }
 
 h1 {
-  text-align: right;
-  font-size: 20px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
 }
 h2 {
-  font-size: 20px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
   padding-bottom: 10px;
 }
 
 hr {
-  color: black;
+  color: #386641;
 }
 
 button {
@@ -36,7 +40,16 @@ footer {
 }
 
 small {
-  font-size: 12px;
+  font-size: 11px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+small {
+  font-size: 10px;
 }
 
 a:link {
@@ -55,7 +68,7 @@ div.details-today {
 
 p.coded-by {
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 span.units {
@@ -72,6 +85,7 @@ span.units a {
 }
 
 .date {
+  font-size: 15px;
   padding: 5px 0px;
 }
 
@@ -101,9 +115,11 @@ span.units a {
   max-width: 350px;
   margin: 0 auto;
   padding: 32px;
-  background: white;
+  background: rgba(255, 255, 255, 0.75);
   margin: 25px auto;
   border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .submit {
