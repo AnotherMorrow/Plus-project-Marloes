@@ -37,6 +37,14 @@ function formatDate(date) {
   return `${day} ${dateNumber} ${month} ${year}, ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "bf635ee358fd7c6cf46cfa9caadaea03";
@@ -110,26 +118,35 @@ function displayCelsiusTemperature(event) {
 }
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
   let forecastHTML = ``;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row">
-      <div class="col-3 weather-forecast-date">${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row">
+      <div class="col-3 weather-forecast-date">${formatDay(
+        forecastDay.dt
+      )}</div>
               <div class="col-3">
-                <img src="media/icons-weather/sun.svg" alt="sun" />
+                <img src="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="" />
               </div>
               <div class="col-6 weather-forecast-temperature">
-                <span class="weather-forecast-temperature-max">8ºC</span
-                ><span class="weather-forecast-temperature-min">6ºC</span>
+                <span class="weather-forecast-temperature-max">${Math.round(
+                  forecastDay.temp.max
+                )}ºC</span
+                ><span class="weather-forecast-temperature-min">${Math.round(
+                  forecastDay.temp.min
+                )}ºC</span>
               </div>
               </div>
             `;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
